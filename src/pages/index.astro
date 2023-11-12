@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import CardContainer from "../components/CardContainer.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="I am a failure.">
@@ -9,105 +11,84 @@ import CardContainer from "../components/CardContainer.astro";
 // v0 by Vercel.
 // https://v0.dev/t/lf8A7tRRElu
 -->
-	<section class="w-full py-6 md:py-12 lg:py-16 xl:py-24 bg-black">
-		<div class="container px-4 md:px-6">
-			<div class="grid gap-6 items-center">
-				<div class="flex flex-col justify-center space-y-8 text-center">
-					<div class="space-y-2">
-						<h1
-							class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500"
-						>
-							Discover Our Unique Features
-						</h1><p
-							class="max-w-[600px] text-zinc-200 md:text-xl dark:text-zinc-100 mx-auto"
-						>
-							Our features are designed to enhance your
-							productivity and streamline your workflow.
-						</p>
-					</div>
-					<CardContainer>
-						<Card
-							href="#"
-							title="Smart Inbox"
-							body="Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails."
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="text-white h-6 w-6 mb-2 opacity-75"
-							>
-								<polyline
-									points="22 12 16 12 14 15 10 15 8 12 2 12"
-								></polyline>
-								<path
-									d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
-								></path>
-							</svg>
-						</Card>
-						<Card
-							href="#"
-							title="Smart Inbox"
-							body="Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails."
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="text-white h-6 w-6 mb-2 opacity-75"
-							>
-								<polyline
-									points="22 12 16 12 14 15 10 15 8 12 2 12"
-								></polyline>
-								<path
-									d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
-								></path>
-							</svg>
-						</Card>
-						<Card
-							href="#"
-							title="Smart Inbox"
-							body="Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails."
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="text-white h-6 w-6 mb-2 opacity-75"
-							>
-								<polyline
-									points="22 12 16 12 14 15 10 15 8 12 2 12"
-								></polyline>
-								<path
-									d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
-								></path>
-							</svg>
-						</Card>
-					</CardContainer>
-				</div>
-			</div>
-			<!-- thanks for reading -->
-			<p class="text-center text-gray-400 text-xs mt-8">
-				Thanks for reading. If you have any questons, please message me <a href="mailto:djlevy26@gmail.com" class="text-gray-400 hover:text-gray-300">here</a>.
-			</p>
-		</div>
-	</section>
+<Hero title="Hey, I am Dylan." body="Welcome to my portfolio." />
+
+	<CardContainer>
+		<Card
+			href="#"
+			title="Smart Inbox"
+			body="Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails."
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="text-white h-6 w-6 mb-2 opacity-75"
+			>
+				<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+				<path
+					d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+				></path>
+			</svg>
+		</Card>
+		<Card
+			href="#"
+			title="Smart Inbox"
+			body="Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails."
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="text-white h-6 w-6 mb-2 opacity-75"
+			>
+				<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+				<path
+					d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+				></path>
+			</svg>
+		</Card>
+		<Card
+			href="#"
+			title="Smart Inbox"
+			body="Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails."
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="text-white h-6 w-6 mb-2 opacity-75"
+			>
+				<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+				<path
+					d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+				></path>
+			</svg>
+		</Card>
+	</CardContainer>
+	<Footer>
+		Thanks for reading. If you have any questons, please message me 
+			<a
+				href="mailto:djlevy26@gmail.com"
+				class="text-gray-200 hover:text-gray-50 underline">here
+			</a>.
+	</Footer>
 </Layout>

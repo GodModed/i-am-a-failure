@@ -1,0 +1,25 @@
+---
+// @ts-ignore
+import * as jsdom from 'jsdom';
+function obfuscateEmail(body: string): string {
+    // find all a tags.
+    const dom = new jsdom.JSDOM(body);
+    const aTags = dom.window.document.querySelectorAll('a');
+    for (const aMatch of aTags) {
+        if (!aMatch.href || !aMatch.href.startsWith('mailto:')) {
+            continue;
+        }
+        aMatch.href = "javascript:window.location.href = 'mailto:' + atob('" + btoa(aMatch.href.substr(7)) + "');";
+    }
+    return dom.window.document.querySelector('body').innerHTML;
+}
+
+const slot = await Astro.slots.render('default');
+
+function getSlot() {
+    return obfuscateEmail(slot);
+}
+---
+<p class="text-center text-gray-300 text-xs mt-8">
+    <Fragment set:html={getSlot()}/>
+</p>
