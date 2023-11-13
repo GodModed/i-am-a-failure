@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.2",
+    "@fontsource-variable/inter": "^5.0.15",
     "astro": "^3.5.2",
     "geist": "^1.1.0",
     "jsdom": "^22.1.0",
