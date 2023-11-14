@@ -3,18 +3,18 @@ import Layout from "./Layout.astro";
 import Hero from "../components/Hero.astro";
 
 interface Props {
-  title: string;
+    title: string;
 }
 
 const { title }: Props = Astro.props;
 ---
 
 <Layout title={title}>
-  <Hero title="Hey, I am Dylan." body="Welcome to my portfolio." />
-  <slot />
-  <a
-    href="javascript:history.back()"
-    class="text-gray-200 hover:text-gray-50 underline"
-    >Back
-  </a>.
+    <Hero title="Hey, I am Dylan." body="Welcome to my portfolio." />
+    <slot />
+    <a
+        href="javascript:history.back()"
+        class="text-gray-200 hover:text-gray-50 underline"
+        >Back
+    </a>.
 </Layout>
