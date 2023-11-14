@@ -3,9 +3,13 @@ interface Props {
 	title: string;
 	body: string;
 	href: string;
+	nolineclamp?: boolean;
+	cursor?: boolean;
+	border?: boolean;
+	onlypopout?: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, nolineclamp, cursor, border, onlypopout }: Props = Astro.props;
 
 type Rotation = "rotate-3" | "-rotate-3" | "rotate-6" | "-rotate-6" | "rotate-12" | "-rotate-12";
 
@@ -14,14 +18,14 @@ function generateRandomRotation(): Rotation {
 	return rotations[Math.floor(Math.random() * rotations.length)];
 }
 ---
-<a href={href} class={`group flex flex-col items-center space-y-2 p-4 rounded-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:${generateRandomRotation()}`}>
+<a href={href} class={`group flex flex-col items-center space-y-2 p-4 rounded-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:${generateRandomRotation()} ${cursor ? "cursor-default" : ""} ${border ? "border-solid border-2" : ""} ${onlypopout ? "hover:rotate-0": ""} `}>
 		<!-- background div with low zindex -->
 		<div class="absolute inset-0 bg-gradient-to-br from-pink-300 to-indigo-400 rounded-lg opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-75 -z-10"></div>
-		<div class="p-2 bg-black bg-opacity-50 rounded-full">
-			<slot/>
+		<div class="p-2 bg-black bg-opacity-50 rounded-full flex">
+			<slot class="m-auto"/>
 		</div>
 		<h2 class="text-xl font-bold text-white">{title}</h2>
-		<p class="text-zinc-200 dark:text-zinc-100 line-clamp-3">
+		<p class={`text-zinc-200 dark:text-zinc-100 ${nolineclamp ? "" : "line-clamp-3"}`}>
 			{body}
 		</p>
 </a>

@@ -1,14 +1,96 @@
 ---
+import Card from "../components/Card.astro";
+import ExperienceIcon from "../components/svgs/ExperienceIcon.astro";
 import SubLayout from "../layouts/SubLayout.astro";
+import {
+    Javascript,
+    Html5,
+    Css3,
+    Oracle,
+    Rust,
+    Astro as AstroIcon,
+    Tailwindcss,
+} from "simple-icons-astro";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import CardContainer from "../components/CardContainer.astro";
+
+dayjs.extend(relativeTime);
 
 const languages = [
     {
         name: "JavaScript",
-        icon: "fab fa-js-square",
-    }
-]
-
+        icon: Javascript,
+        learned: "Nov 29, 2021",
+        href: "https://developer.mozilla.org/en-US/docs/Web/Javascript",
+    },
+    {
+        name: "HTML",
+        icon: Html5,
+        learned: "Dec 23, 2021",
+        href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+        name: "CSS",
+        icon: Css3,
+        learned: "May 15, 2022",
+        href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    },
+    {
+        name: "Java",
+        icon: Oracle,
+        learned: "Jun 6, 2022",
+        href: "https://www.oracle.com/java/",
+    },
+    {
+        name: "Rust",
+        icon: Rust,
+        learned: "Sep 28, 2023",
+        href: "https://www.rust-lang.org/",
+    },
+    {
+        name: "Astro",
+        icon: AstroIcon,
+        learned: "Nov 11, 2023",
+        href: "https://astro.build/",
+    },
+    {
+        name: "TailwindCSS",
+        icon: Tailwindcss,
+        learned: "Nov 11, 2023",
+        href: "https://tailwindcss.com/",
+    },
+];
 ---
-<SubLayout title="Dylan - Experience">
 
+<SubLayout title="Dylan - Experience">
+    <Card
+        href="javascript:history.back()"
+        title="Experience"
+        body="I have learned a variety of programming languages and frameworks over time. I have also worked with a variety of different people."
+        nolineclamp
+        cursor
+        onlypopout
+    >
+        <ExperienceIcon />
+    </Card>
+    <CardContainer>
+        {
+            languages.reverse().map((language) => (
+                <Card
+                    href={language.href}
+                    title={language.name}
+                    body={`I learned ${language.name} ${dayjs(
+                        language.learned,
+                    ).toNow(true)} ago.`}
+                    nolineclamp
+                >
+                    <language.icon
+                        stroke="currentColor"
+                        class="text-white h-6 w-6 mb-2 opacity-75"
+                    />
+                </Card>
+            ))
+        }
+    </CardContainer>
 </SubLayout>
