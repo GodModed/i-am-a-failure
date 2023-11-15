@@ -1,10 +1,10 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
-  site: 'https://godmoded.github.io',
-  base: 'i-am-a-failure',
-  compressHTML: true
+    integrations: [tailwind()],
+    site: "https://godmoded.github.io",
+    base: "i-am-a-failure",
+    compressHTML: true,
 });

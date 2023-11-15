@@ -1,6 +1,6 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "moduleResolution": "node"
-  }
+    "extends": "astro/tsconfigs/base",
+    "compilerOptions": {
+        "moduleResolution": "node"
+    }
 }
