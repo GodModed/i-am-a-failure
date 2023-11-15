@@ -1,5 +1,18 @@
 ---
 import SubLayout from "../layouts/SubLayout.astro";
+import Card from "../components/Card.astro";
+import AboutMeIcon from "../components/svgs/AboutMeIcon.astro";
 ---
 
-<SubLayout title="Dylan - About Me" />
+<SubLayout title="Dylan - About Me">
+    <Card
+        href="javascript:history.back()"
+        title="About Me"
+        body="Learn about me and my journey to becoming a programmer. I have learned a lot over the years and I am still learning. I am always looking for new things to learn."
+        nolineclamp
+        cursor
+        onlypopout
+    >
+        <AboutMeIcon />
+    </Card>
+</SubLayout>
