@@ -1,6 +1,8 @@
 ---
 import Layout from "./Layout.astro";
 import Hero from "../components/Hero.astro";
+import Card from "../components/Card.astro";
+import BackIcon from "../components/svgs/BackIcon.astro";
 
 interface Props {
     title: string;
@@ -12,9 +14,13 @@ const { title }: Props = Astro.props;
 <Layout title={title}>
     <Hero title="Hey, I am Dylan." body="Welcome to my portfolio." />
     <slot />
-    <a
+    <Card
         href="javascript:history.back()"
-        class="text-gray-200 hover:text-gray-50 underline"
-        >Back
-    </a>.
+        title="Back"
+        body="Go back to the previous page."
+        nolineclamp
+        onlypopout
+    >
+        <BackIcon />
+    </Card>
 </Layout>
