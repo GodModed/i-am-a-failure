@@ -23,42 +23,49 @@ const languages = [
         icon: Javascript,
         learned: "Nov 29, 2021",
         href: "https://developer.mozilla.org/en-US/docs/Web/Javascript",
+        mastered: true
     },
     {
         name: "HTML",
         icon: Html5,
         learned: "Dec 23, 2021",
         href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        mastered: false
     },
     {
         name: "CSS",
         icon: Css3,
         learned: "May 15, 2022",
         href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        mastered: false
     },
     {
         name: "Java",
         icon: Oracle,
         learned: "Jun 6, 2022",
         href: "https://www.oracle.com/java/",
+        mastered: false
     },
     {
         name: "Rust",
         icon: Rust,
         learned: "Sep 28, 2023",
         href: "https://www.rust-lang.org/",
+        mastered: false
     },
     {
         name: "Astro",
         icon: AstroIcon,
         learned: "Nov 11, 2023",
         href: "https://astro.build/",
+        mastered: false
     },
     {
         name: "TailwindCSS",
         icon: Tailwindcss,
         learned: "Nov 11, 2023",
         href: "https://tailwindcss.com/",
+        mastered: false
     },
 ];
 ---
@@ -80,9 +87,11 @@ const languages = [
                 <Card
                     href={language.href}
                     title={language.name}
-                    body={`I learned ${language.name} ${dayjs(
+                    body={language.mastered ? `I mastered ${language.name} ${dayjs(
                         language.learned,
-                    ).toNow(true)} ago.`}
+                    ).toNow(true)} ago.` : `I have been learning ${language.name} for ${dayjs(
+                        language.learned,
+                    ).toNow(true)}`}
                     nolineclamp
                 >
                     <language.icon
