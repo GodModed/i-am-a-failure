@@ -1,0 +1,28 @@
+---
+interface Props {
+    name: string;
+}
+
+const { name }: Props = Astro.props;
+---
+
+<div class="group card shadow-lg compact bg-base-100 overflow-hidden">
+    <!-- create a div which spans the entire width and height of the card but is behind everything -->
+    <div class="-z-10 inset bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400"></div>
+    <div class="grid place-items-center py-8">
+        <div class="avatar opacity-90">
+            <div
+                class="mb-8 rounded-full w-32 h-32 ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden"
+            >
+                <img
+                    src="https://avatars.githubusercontent.com/u/40706932"
+                    alt="Godmoded"
+                />
+            </div>
+        </div>
+        <div class="text-center mx-auto px-8">
+            <h2 class="text-2xl font-bold text-white mb-2">{ name }</h2>
+            <p class="text-white max-w-lg"><slot /></p>
+        </div>
+    </div>
+</div>
